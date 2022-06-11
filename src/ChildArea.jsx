@@ -1,10 +1,14 @@
+// memoで関係ない親要素に影響された再レンダリングが起きないようにする
+import { memo } from "react";
+
 const style = {
   width: "100%",
   height: "200px",
   backgroundColor: "khaki"
 };
 
-export const ChildArea = (props) => {
+// 基本的にコンポーネントは memo で囲む
+export const ChildArea = memo((props) => {
   // 受け取ったpropsを展開
   const { open } = props;
   console.log("ChildAreaがレンダリングされた");
@@ -25,4 +29,4 @@ export const ChildArea = (props) => {
       ) : null}
     </>
   );
-};
+});
