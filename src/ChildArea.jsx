@@ -7,6 +7,13 @@ const style = {
 export const ChildArea = (props) => {
   // 受け取ったpropsを展開
   const { open } = props;
+  console.log("ChildAreaがレンダリングされた");
+
+  const data = [...Array(2000).keys()];
+  data.forEach(() => {
+    console.log("...");
+  });
+
   return (
     <>
       {/* 三項演算子
